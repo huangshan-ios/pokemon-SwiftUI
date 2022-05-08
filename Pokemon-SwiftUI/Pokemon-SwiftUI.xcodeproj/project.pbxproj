@@ -16,6 +16,9 @@
 		F79019182824387100E7969B /* Pokemon_SwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79019172824387100E7969B /* Pokemon_SwiftUIUITestsLaunchTests.swift */; };
 		F790192B2824397600E7969B /* PokemonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790192A2824397600E7969B /* PokemonListView.swift */; };
 		F790192E282439B700E7969B /* BaseHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F790192D282439B700E7969B /* BaseHostingController.swift */; };
+		F79019312824414200E7969B /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79019302824414200E7969B /* NetworkProvider.swift */; };
+		F79019332824428800E7969B /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79019322824428800E7969B /* NetworkRequest.swift */; };
+		F79019362824493C00E7969B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79019352824493C00E7969B /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		F79019172824387100E7969B /* Pokemon_SwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon_SwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F790192A2824397600E7969B /* PokemonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListView.swift; sourceTree = "<group>"; };
 		F790192D282439B700E7969B /* BaseHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseHostingController.swift; sourceTree = "<group>"; };
+		F79019302824414200E7969B /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		F79019322824428800E7969B /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		F79019352824493C00E7969B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		F79018F32824386F00E7969B /* Pokemon-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				F79019242824388300E7969B /* App */,
 				F79019252824389600E7969B /* Modules */,
 				F7901926282438A300E7969B /* Shared */,
 				F7901927282438AA00E7969B /* CommonShared */,
@@ -136,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				F79019292824394B00E7969B /* PokemonList */,
-				F79019242824388300E7969B /* App */,
 				F7901928282438CD00E7969B /* Resources */,
 			);
 			path = Modules;
@@ -145,6 +151,7 @@
 		F7901926282438A300E7969B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F79019342824493200E7969B /* Networking */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -152,6 +159,7 @@
 		F7901927282438AA00E7969B /* CommonShared */ = {
 			isa = PBXGroup;
 			children = (
+				F790192F2824412B00E7969B /* Networking */,
 				F790192C282439AA00E7969B /* Base */,
 			);
 			path = CommonShared;
@@ -181,6 +189,23 @@
 				F790192D282439B700E7969B /* BaseHostingController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		F790192F2824412B00E7969B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F79019302824414200E7969B /* NetworkProvider.swift */,
+				F79019322824428800E7969B /* NetworkRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F79019342824493200E7969B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F79019352824493C00E7969B /* NetworkService.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +342,9 @@
 				F790192E282439B700E7969B /* BaseHostingController.swift in Sources */,
 				F790192B2824397600E7969B /* PokemonListView.swift in Sources */,
 				F79018F72824386F00E7969B /* SceneDelegate.swift in Sources */,
+				F79019332824428800E7969B /* NetworkRequest.swift in Sources */,
+				F79019312824414200E7969B /* NetworkProvider.swift in Sources */,
+				F79019362824493C00E7969B /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
