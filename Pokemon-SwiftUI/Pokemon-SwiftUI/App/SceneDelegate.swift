@@ -19,7 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = BaseHostingController(view: PokemonListView())
+        window?.rootViewController = BaseHostingController(view: PokemonListView(viewModel: PokemonListViewModelImpl(PokemonListUseCaseImpl(repository: PokemonListRepositoryImpl(networkService: NetworkService())),
+                                                                                                                     navigator: PokemonListNavigatorImpl())))
         window?.makeKeyAndVisible()
     }
 

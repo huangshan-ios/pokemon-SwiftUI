@@ -16,7 +16,7 @@ protocol NetworkRequest {
     var url: URL { get }
     var method: HTTPMethod { get }
     var headers: [String: String]? { get }
-    var parameters: [String: Any]? { get }
+    var parameters: [String: String]? { get }
     
     func makeRequest() throws -> URLRequest
     

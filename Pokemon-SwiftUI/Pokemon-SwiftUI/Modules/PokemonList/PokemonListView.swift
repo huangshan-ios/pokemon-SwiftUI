@@ -7,14 +7,34 @@
 
 import SwiftUI
 
-struct PokemonListView: View {
+struct PokemonListView<ViewModel>: View where ViewModel: PokemonListViewModel {
+    
+    @ObservedObject var viewModel: ViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        NavigationView {
+            ZStack {
+                List {
+                    ForEach(viewModel.pokemons) { pokemon in
+                        Text(pokemon.name.capitalized)
+                            .onTapGesture { viewModel.onDetail(pokemon: pokemon) }
+                    }
+                }
+                .navigationTitle("Pokémons")
+                .navigationBarTitleDisplayMode(.inline)
+                if viewModel.isLoading {
+                    ProgressView()
+                }
+            }
+        }
+        .onAppear { viewModel.fetchPokemons() }
     }
+    
 }
 
 struct PokemonListView_Previews: PreviewProvider {
     static var previews: some View {
-        PokemonListView()
+        PokemonListView(viewModel: PokemonListViewModelPreview())
     }
 }
