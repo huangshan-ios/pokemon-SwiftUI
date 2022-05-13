@@ -6,12 +6,13 @@
 //
 
 import Combine
+import SwiftUI
 
 protocol PokemonListUseCase {
     
     var repository: PokemonRepository { get }
     
-    func fetchPokemons() -> AnyPublisher<[PokemonInfo], NetworkError>
+    func fetchPokemons() -> AnyPublisher<[PokemonInfo], UIError>
     
 }
 
@@ -23,8 +24,12 @@ final class PokemonListUseCaseImpl: PokemonListUseCase {
         self.repository = repository
     }
     
-    func fetchPokemons() -> AnyPublisher<[PokemonInfo], NetworkError> {
+    func fetchPokemons() -> AnyPublisher<[PokemonInfo], UIError> {
         return repository.fetchPokemons()
+            .mapError({ networkError in
+                return UIError(id: networkError.errorCode,
+                               messages: networkError.localizedDescription)
+            })
             .map { response in
                 return response.results
                     .map { pokemon in

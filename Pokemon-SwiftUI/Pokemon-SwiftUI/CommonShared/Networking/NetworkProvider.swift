@@ -13,6 +13,17 @@ enum NetworkError: Error {
     case invalidResponse(Error)
     case invalidJSON
     case other(Error)
+    
+    var errorCode: Int {
+        switch self {
+        case .invalidRequest, .invalidJSON:
+            return 0
+        case .invalidResponse:
+            return 1
+        case .other:
+            return 3
+        }
+    }
 }
 
 protocol NetworkProvider {
