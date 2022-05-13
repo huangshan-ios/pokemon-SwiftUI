@@ -9,7 +9,7 @@ import Combine
 
 protocol PokemonListUseCase {
     
-    var repository: PokemonListRepository { get }
+    var repository: PokemonRepository { get }
     
     func fetchPokemons() -> AnyPublisher<[PokemonInfo], NetworkError>
     
@@ -17,9 +17,9 @@ protocol PokemonListUseCase {
 
 final class PokemonListUseCaseImpl: PokemonListUseCase {
     
-    let repository: PokemonListRepository
+    let repository: PokemonRepository
     
-    init(repository: PokemonListRepository) {
+    init(repository: PokemonRepository) {
         self.repository = repository
     }
     
