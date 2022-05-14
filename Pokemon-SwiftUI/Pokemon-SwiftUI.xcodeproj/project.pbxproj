@@ -32,6 +32,7 @@
 		F793AC2F282C2F5300938329 /* ErrorIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F793AC2E282C2F5300938329 /* ErrorIndicator.swift */; };
 		F7D5D4BD282EDD3300EAB9D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D4BC282EDD3300EAB9D6 /* Constants.swift */; };
 		F7D5D4BF282EE08000EAB9D6 /* UIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D4BE282EE08000EAB9D6 /* UIError.swift */; };
+		F7D5D4C3282F9A7F00EAB9D6 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D4C2282F9A7F00EAB9D6 /* Array+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		F793AC2E282C2F5300938329 /* ErrorIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorIndicator.swift; sourceTree = "<group>"; };
 		F7D5D4BC282EDD3300EAB9D6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F7D5D4BE282EE08000EAB9D6 /* UIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIError.swift; sourceTree = "<group>"; };
+		F7D5D4C2282F9A7F00EAB9D6 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				F793AC232829757900938329 /* AnyPublisher+Extensions.swift */,
+				F7D5D4C2282F9A7F00EAB9D6 /* Array+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				F790192E282439B700E7969B /* BaseHostingController.swift in Sources */,
 				F790192B2824397600E7969B /* PokemonListView.swift in Sources */,
 				F793AC2628297B5500938329 /* PokemonRepository.swift in Sources */,
+				F7D5D4C3282F9A7F00EAB9D6 /* Array+Extensions.swift in Sources */,
 				F79018F72824386F00E7969B /* SceneDelegate.swift in Sources */,
 				F793AC1828282D2000938329 /* PokemonInfo.swift in Sources */,
 				F793AC222829567C00938329 /* CancellableBag.swift in Sources */,

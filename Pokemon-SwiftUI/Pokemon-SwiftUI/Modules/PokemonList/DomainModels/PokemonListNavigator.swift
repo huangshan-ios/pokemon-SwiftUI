@@ -13,5 +13,6 @@ protocol PokemonListNavigator {
 
 final class PokemonListNavigatorImpl: PokemonListNavigator {
     func navigateToDetail(pokemon: PokemonInfo) {
+        print("Navigate to Pokemon Detail")
     }
 }
