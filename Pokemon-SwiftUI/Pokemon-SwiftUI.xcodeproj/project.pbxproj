@@ -137,6 +137,7 @@
 				F79019252824389600E7969B /* Modules */,
 				F7901926282438A300E7969B /* Shared */,
 				F7901927282438AA00E7969B /* CommonShared */,
+				F7901928282438CD00E7969B /* Resources */,
 			);
 			path = "Pokemon-SwiftUI";
 			sourceTree = "<group>";
@@ -171,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				F79019292824394B00E7969B /* PokemonList */,
-				F7901928282438CD00E7969B /* Resources */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -628,7 +628,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 28332VQ6S8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Pokemon-SwiftUI/Modules/Resources/Info.plist";
+				INFOPLIST_FILE = "Pokemon-SwiftUI/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -656,7 +656,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 28332VQ6S8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Pokemon-SwiftUI/Modules/Resources/Info.plist";
+				INFOPLIST_FILE = "Pokemon-SwiftUI/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

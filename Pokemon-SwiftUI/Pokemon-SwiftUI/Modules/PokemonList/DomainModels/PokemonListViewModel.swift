@@ -18,7 +18,7 @@ protocol PokemonListViewModel: ObservableObject {
     var error: UIError? { get set }
     
     func onAppear()
-    func onLoadMore(at index: Int)
+    func loadMoreIfNeeded(_ index: Int)
     func onDetail(pokemon: PokemonInfo)
     
     func getPokemon(from index: Int) -> PokemonInfo?
@@ -38,7 +38,7 @@ final class PokemonListViewModelPreview: PokemonListViewModel {
     @Published private(set) var isLoading: Bool = false
     
     func onAppear() {}
-    func onLoadMore(at index: Int) {}
+    func loadMoreIfNeeded(_ index: Int) {}
     func onDetail(pokemon: PokemonInfo) {}
     func getPokemon(from index: Int) -> PokemonInfo? {
         return nil
@@ -83,8 +83,8 @@ final class PokemonListViewModelImpl: PokemonListViewModel {
         fetchPokemons(with: offset, and: limit)
     }
     
-    func onLoadMore(at index: Int) {
-        if isLoading == false && index == pokemons.count - 10 {
+    func loadMoreIfNeeded(_ index: Int) {
+        if return !isLoading && index == pokemons.count - 10 {
             fetchPokemons(with: offset, and: limit)
         }
     }

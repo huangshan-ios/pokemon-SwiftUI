@@ -25,7 +25,7 @@ struct PokemonListView<ViewModel>: View where ViewModel: PokemonListViewModel {
                                     viewModel.onDetail(pokemon: pokemon)
                                 }
                                 .onAppear {
-                                    viewModel.onLoadMore(at: index)
+                                    viewModel.loadMoreIfNeeded(index)
                                 }
                         }
                     }
