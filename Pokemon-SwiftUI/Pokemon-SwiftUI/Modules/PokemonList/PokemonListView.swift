@@ -39,13 +39,7 @@ struct PokemonListView<ViewModel>: View where ViewModel: PokemonListViewModel {
             }
         }
         .onAppear(perform: { viewModel.onAppear() })
-        .alert(item: $viewModel.error) { error in
-            Alert(
-                title: Text("You got an error"),
-                message: Text(error.messages),
-                dismissButton: .default(Text("Got it!"))
-            )
-        }
+        .showErrorAlert($viewModel.error)
     }
     
 }

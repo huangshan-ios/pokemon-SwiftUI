@@ -33,6 +33,7 @@
 		F7D5D4BD282EDD3300EAB9D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D4BC282EDD3300EAB9D6 /* Constants.swift */; };
 		F7D5D4BF282EE08000EAB9D6 /* UIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D4BE282EE08000EAB9D6 /* UIError.swift */; };
 		F7D5D4C3282F9A7F00EAB9D6 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D4C2282F9A7F00EAB9D6 /* Array+Extensions.swift */; };
+		F7EC749E283119AC00DC410A /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC749D283119AC00DC410A /* View+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		F7D5D4BC282EDD3300EAB9D6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F7D5D4BE282EE08000EAB9D6 /* UIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIError.swift; sourceTree = "<group>"; };
 		F7D5D4C2282F9A7F00EAB9D6 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		F7EC749D283119AC00DC410A /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 			children = (
 				F793AC232829757900938329 /* AnyPublisher+Extensions.swift */,
 				F7D5D4C2282F9A7F00EAB9D6 /* Array+Extensions.swift */,
+				F7EC749D283119AC00DC410A /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 			files = (
 				F793AC242829757900938329 /* AnyPublisher+Extensions.swift in Sources */,
 				F793AC1528282C9500938329 /* PokemonsResponse.swift in Sources */,
+				F7EC749E283119AC00DC410A /* View+Extensions.swift in Sources */,
 				F793AC2D282ABE6E00938329 /* PokemonsRequest.swift in Sources */,
 				F79018F52824386F00E7969B /* AppDelegate.swift in Sources */,
 				F793AC2828297E9500938329 /* PokemonListNavigator.swift in Sources */,
