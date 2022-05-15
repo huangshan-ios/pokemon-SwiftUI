@@ -84,7 +84,7 @@ final class PokemonListViewModelImpl: PokemonListViewModel {
     }
     
     func loadMoreIfNeeded(_ index: Int) {
-        if return !isLoading && index == pokemons.count - 10 {
+        if !isLoading && index == pokemons.count - 10 {
             fetchPokemons(with: offset, and: limit)
         }
     }

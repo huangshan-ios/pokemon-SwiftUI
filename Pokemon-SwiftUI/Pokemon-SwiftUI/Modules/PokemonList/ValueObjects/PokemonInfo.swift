@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct PokemonInfo: Identifiable {
-    let id = UUID().uuidString
+struct PokemonInfo {
     let name: String
     let url: String
 }
