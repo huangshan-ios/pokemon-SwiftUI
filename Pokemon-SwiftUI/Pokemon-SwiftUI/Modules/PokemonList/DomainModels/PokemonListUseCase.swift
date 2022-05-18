@@ -12,7 +12,7 @@ protocol PokemonListUseCase {
     
     var repository: PokemonRepository { get }
     
-    func fetchPokemons(offset: Int, limit: Int) -> AnyPublisher<[PokemonInfo], UIError>
+    func fetchPokemons(offset: Int, limit: Int) -> AnyPublisher<[PokemonInfo], CommonUIError>
 
 }
 
@@ -24,12 +24,9 @@ final class PokemonListUseCaseImpl: PokemonListUseCase {
         self.repository = repository
     }
     
-    func fetchPokemons(offset: Int, limit: Int) -> AnyPublisher<[PokemonInfo], UIError> {
+    func fetchPokemons(offset: Int, limit: Int) -> AnyPublisher<[PokemonInfo], CommonUIError> {
         return repository.fetchPokemons(offset: offset, limit: limit)
-            .mapError({ networkError in
-                return UIError(id: networkError.errorCode,
-                               messages: networkError.localizedDescription)
-            })
+            .mapError({ $0.asCommonUIError() })
             .map ({ response in
                 return response.results
                     .map { pokemon in

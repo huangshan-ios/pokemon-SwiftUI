@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F72D61B228352119003858C1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72D61B128352119003858C1 /* NetworkError.swift */; };
 		F79018F52824386F00E7969B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79018F42824386F00E7969B /* AppDelegate.swift */; };
 		F79018F72824386F00E7969B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79018F62824386F00E7969B /* SceneDelegate.swift */; };
 		F79018FE2824387100E7969B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F79018FD2824387100E7969B /* Assets.xcassets */; };
@@ -31,7 +32,7 @@
 		F793AC2D282ABE6E00938329 /* PokemonsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F793AC2C282ABE6E00938329 /* PokemonsRequest.swift */; };
 		F793AC2F282C2F5300938329 /* ErrorIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F793AC2E282C2F5300938329 /* ErrorIndicator.swift */; };
 		F7D5D4BD282EDD3300EAB9D6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D4BC282EDD3300EAB9D6 /* Constants.swift */; };
-		F7D5D4BF282EE08000EAB9D6 /* UIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D4BE282EE08000EAB9D6 /* UIError.swift */; };
+		F7D5D4BF282EE08000EAB9D6 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D4BE282EE08000EAB9D6 /* Error+Extensions.swift */; };
 		F7D5D4C3282F9A7F00EAB9D6 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D4C2282F9A7F00EAB9D6 /* Array+Extensions.swift */; };
 		F7EC749E283119AC00DC410A /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC749D283119AC00DC410A /* View+Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F72D61B128352119003858C1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		F79018F12824386F00E7969B /* Pokemon-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F79018F42824386F00E7969B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F79018F62824386F00E7969B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +84,7 @@
 		F793AC2C282ABE6E00938329 /* PokemonsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonsRequest.swift; sourceTree = "<group>"; };
 		F793AC2E282C2F5300938329 /* ErrorIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorIndicator.swift; sourceTree = "<group>"; };
 		F7D5D4BC282EDD3300EAB9D6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F7D5D4BE282EE08000EAB9D6 /* UIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIError.swift; sourceTree = "<group>"; };
+		F7D5D4BE282EE08000EAB9D6 /* Error+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
 		F7D5D4C2282F9A7F00EAB9D6 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		F7EC749D283119AC00DC410A /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,7 +183,6 @@
 		F7901926282438A300E7969B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				F7D5D4BB282EDD0D00EAB9D6 /* Utils */,
 				F7D5D4BA282EDCEB00EAB9D6 /* Repositories */,
 				F793AC1628282D0000938329 /* Models */,
 				F79019342824493200E7969B /* Networking */,
@@ -192,6 +193,7 @@
 		F7901927282438AA00E7969B /* CommonShared */ = {
 			isa = PBXGroup;
 			children = (
+				F7D5D4BB282EDD0D00EAB9D6 /* Helper */,
 				F793AC29282ABC6600938329 /* CustomClass */,
 				F793AC202829567400938329 /* Extensions */,
 				F790192F2824412B00E7969B /* Networking */,
@@ -233,6 +235,7 @@
 			children = (
 				F79019302824414200E7969B /* NetworkProvider.swift */,
 				F79019322824428800E7969B /* NetworkRequest.swift */,
+				F72D61B128352119003858C1 /* NetworkError.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			children = (
 				F793AC232829757900938329 /* AnyPublisher+Extensions.swift */,
 				F7D5D4C2282F9A7F00EAB9D6 /* Array+Extensions.swift */,
+				F7D5D4BE282EE08000EAB9D6 /* Error+Extensions.swift */,
 				F7EC749D283119AC00DC410A /* View+Extensions.swift */,
 			);
 			path = Extensions;
@@ -300,13 +304,12 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
-		F7D5D4BB282EDD0D00EAB9D6 /* Utils */ = {
+		F7D5D4BB282EDD0D00EAB9D6 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				F7D5D4BC282EDD3300EAB9D6 /* Constants.swift */,
-				F7D5D4BE282EE08000EAB9D6 /* UIError.swift */,
 			);
-			path = Utils;
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,6 +444,7 @@
 			files = (
 				F793AC242829757900938329 /* AnyPublisher+Extensions.swift in Sources */,
 				F793AC1528282C9500938329 /* PokemonsResponse.swift in Sources */,
+				F72D61B228352119003858C1 /* NetworkError.swift in Sources */,
 				F7EC749E283119AC00DC410A /* View+Extensions.swift in Sources */,
 				F793AC2D282ABE6E00938329 /* PokemonsRequest.swift in Sources */,
 				F79018F52824386F00E7969B /* AppDelegate.swift in Sources */,
@@ -460,7 +464,7 @@
 				F79019312824414200E7969B /* NetworkProvider.swift in Sources */,
 				F793AC1B28282E0B00938329 /* PokemonListViewModel.swift in Sources */,
 				F79019362824493C00E7969B /* NetworkService.swift in Sources */,
-				F7D5D4BF282EE08000EAB9D6 /* UIError.swift in Sources */,
+				F7D5D4BF282EE08000EAB9D6 /* Error+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

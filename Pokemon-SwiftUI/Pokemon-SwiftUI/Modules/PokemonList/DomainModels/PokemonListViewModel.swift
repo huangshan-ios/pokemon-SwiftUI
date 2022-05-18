@@ -15,7 +15,7 @@ protocol PokemonListViewModel: ObservableObject {
     
     var isLoading: Bool { get }
     var pokemons: [PokemonInfo] { get }
-    var error: UIError? { get set }
+    var error: CommonUIError? { get set }
     
     func onAppear()
     func loadMoreIfNeeded(_ index: Int)
@@ -34,7 +34,7 @@ final class PokemonListViewModelPreview: PokemonListViewModel {
                                                            PokemonInfo(name: "venusaur", url: ""),
                                                            PokemonInfo(name: "charmander", url: ""),
                                                            PokemonInfo(name: "charmeleon", url: "")]
-    @Published var error: UIError? = nil
+    @Published var error: CommonUIError? = nil
     @Published private(set) var isLoading: Bool = false
     
     func onAppear() {}
@@ -49,11 +49,11 @@ final class PokemonListViewModelImpl: PokemonListViewModel {
 
     @Published private(set) var isLoading: Bool = false
     @Published private(set) var pokemons: [PokemonInfo] = []
-    @Published var error: UIError? = nil
+    @Published var error: CommonUIError? = nil
     
     private let cancellableBag = CancellableBag()
     private let activityIndicator = ActivityIndicator()
-    private let errorIndicator = ErrorIndicator<UIError>()
+    private let errorIndicator = ErrorIndicator<CommonUIError>()
     
     private let limit: Int = 100
     private var offset: Int = 0
@@ -73,7 +73,7 @@ final class PokemonListViewModelImpl: PokemonListViewModel {
             .assign(to: &$isLoading)
         
         errorIndicator.errors
-            .map({ error -> UIError? in
+            .map({ error -> CommonUIError? in
                 return error
             })
             .assign(to: &$error)

@@ -9,11 +9,11 @@ import Combine
 import SwiftUI
 
 extension View {
-    func showErrorAlert(_ error: Binding<UIError?>) -> some View {
+    func showErrorAlert(_ error: Binding<CommonUIError?>) -> some View {
         self.alert(item: error) { error in
             Alert(
                 title: Text("You got an error"),
-                message: Text(error.messages),
+                message: Text(error.message),
                 dismissButton: .default(Text("Got it!"))
             )
         }
