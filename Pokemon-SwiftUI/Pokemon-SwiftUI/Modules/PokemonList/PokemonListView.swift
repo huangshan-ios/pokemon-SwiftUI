@@ -13,33 +13,32 @@ struct PokemonListView<ViewModel>: View where ViewModel: PokemonListViewModel {
     
     var body: some View {
         
-        NavigationView {
-            ZStack {
-                List {
-                    ForEach(viewModel.pokemons.indices, id: \.self) { index in
-                        if let pokemon = viewModel.getPokemon(from: index) {
-                            Text(pokemon.name.capitalized)
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                .background(Color(.systemBackground))
-                                .onTapGesture {
-                                    viewModel.onDetail(pokemon: pokemon)
-                                }
-                                .onAppear {
-                                    viewModel.loadMoreIfNeeded(index)
-                                }
-                        }
+        ZStack {
+            List {
+                ForEach(viewModel.pokemons.indices, id: \.self) { index in
+                    if let pokemon = viewModel.getPokemon(from: index) {
+                        Text(pokemon.name.capitalized)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .background(Color(.systemBackground))
+                            .onTapGesture {
+                                viewModel.onDetail(pokemon: pokemon)
+                            }
+                            .onAppear {
+                                viewModel.loadMoreIfNeeded(index)
+                            }
                     }
                 }
-                .navigationTitle("Pokémons")
-                .navigationBarTitleDisplayMode(.inline)
-                if viewModel.isLoading {
-                    ProgressView()
-                        .background(Color.clear)
-                }
+            }
+            .navigationTitle("Pokémons")
+            .navigationBarTitleDisplayMode(.inline)
+            if viewModel.isLoading {
+                ProgressView()
+                    .background(Color.clear)
             }
         }
         .onAppear(perform: { viewModel.onAppear() })
         .showErrorAlert($viewModel.error)
+        
     }
     
 }

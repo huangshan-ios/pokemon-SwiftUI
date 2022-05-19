@@ -23,10 +23,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let networkService = NetworkService()
         let pokemonListRepository = PokemonListRepositoryImpl(networkService: networkService)
         let pokemonListUseCase = PokemonListUseCaseImpl(repository: pokemonListRepository)
-        let pokemonListNavigator = PokemonListNavigatorImpl()
+        let navigationController = UINavigationController(rootViewController: UIViewController())
+        let pokemonListNavigator = PokemonListNavigatorImpl(navigationController: navigationController)
         let pokemonListViewModel = PokemonListViewModelImpl(pokemonListUseCase, navigator: pokemonListNavigator)
         
-        window?.rootViewController = BaseHostingController(view: PokemonListView(viewModel: pokemonListViewModel))
+        navigationController.viewControllers = [BaseHostingController(view: PokemonListView(viewModel: pokemonListViewModel))]
+        
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }
 

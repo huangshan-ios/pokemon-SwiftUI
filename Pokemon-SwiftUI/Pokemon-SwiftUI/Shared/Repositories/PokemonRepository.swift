@@ -11,8 +11,8 @@ import Foundation
 protocol PokemonRepository {
     var networkService: NetworkProvider { get }
     
-    func fetchPokemons(offset: Int, limit: Int) -> AnyPublisher<PokemonsResponse, NetworkError>
-    func detailPokemon(url: String) -> AnyPublisher<Void, NetworkError>
+    func fetchPokemons(offset: Int, limit: Int) -> AnyPublisher<PokemonListResponse, NetworkError>
+    func loadDetailPokemon(id: String) -> AnyPublisher<PokemonResponse, NetworkError>
 }
 
 final class PokemonListRepositoryImpl: PokemonRepository {
@@ -23,14 +23,16 @@ final class PokemonListRepositoryImpl: PokemonRepository {
         self.networkService = networkService
     }
     
-    func fetchPokemons(offset: Int, limit: Int) -> AnyPublisher<PokemonsResponse, NetworkError> {
+    func fetchPokemons(offset: Int, limit: Int) -> AnyPublisher<PokemonListResponse, NetworkError> {
         return networkService
-            .request(PokemonsRequest(offset: offset, limit: limit))
+            .request(PokemonListRequest(offset: offset, limit: limit))
             .eraseToAnyPublisher()
     }
     
-    func detailPokemon(url: String) -> AnyPublisher<Void, NetworkError> {
-        return .just(())
+    func loadDetailPokemon(id: String) -> AnyPublisher<PokemonResponse, NetworkError> {
+        return networkService
+            .request(PokemonRequest(id: id))
+            .eraseToAnyPublisher()
     }
     
 }

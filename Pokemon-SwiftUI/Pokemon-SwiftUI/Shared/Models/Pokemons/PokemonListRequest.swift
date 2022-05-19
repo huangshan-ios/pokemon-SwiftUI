@@ -1,5 +1,5 @@
 //
-//  PokemonsRequest.swift
+//  PokemonListRequest.swift
 //  Pokemon-SwiftUI
 //
 //  Created by Son Hoang on 10/05/2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PokemonsRequest: NetworkRequest {
+struct PokemonListRequest: NetworkRequest {
     
     let offset: Int
     let limit: Int
