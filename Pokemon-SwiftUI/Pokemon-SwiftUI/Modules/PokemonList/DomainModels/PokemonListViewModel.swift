@@ -26,7 +26,7 @@ protocol PokemonListViewModel: ObservableObject {
 
 final class PokemonListViewModelPreview: PokemonListViewModel {
     
-    let useCase: PokemonListUseCase = PokemonListUseCaseImpl(repository: PokemonListRepositoryImpl(networkService: NetworkService()))
+    let useCase: PokemonListUseCase = PokemonListUseCaseImpl(repository: PokemonRepositoryImpl(networkService: NetworkService()))
     let navigator: PokemonListNavigator = PokemonListNavigatorImpl(navigationController: nil)
     
     @Published private(set) var pokemons: [PokemonInfo] = [PokemonInfo(name: "bulbasaur", url: ""),
@@ -106,7 +106,7 @@ final class PokemonListViewModelImpl: PokemonListViewModel {
 
 extension PokemonListViewModelImpl {
     private func fetchPokemons(with offset: Int, and limit: Int) {
-        useCase.fetchPokemons(offset: offset, limit: limit)
+        useCase.getPokemons(offset: offset, limit: limit)
             .trackActivity(activityIndicator)
             .trackError(errorIndicator)
             .sink(receiveValue: { [weak self] pokemons in

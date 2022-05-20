@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         
         let networkService = NetworkService()
-        let pokemonListRepository = PokemonListRepositoryImpl(networkService: networkService)
+        let pokemonListRepository = PokemonRepositoryImpl(networkService: networkService)
         let pokemonListUseCase = PokemonListUseCaseImpl(repository: pokemonListRepository)
         let navigationController = UINavigationController(rootViewController: UIViewController())
         let pokemonListNavigator = PokemonListNavigatorImpl(navigationController: navigationController)

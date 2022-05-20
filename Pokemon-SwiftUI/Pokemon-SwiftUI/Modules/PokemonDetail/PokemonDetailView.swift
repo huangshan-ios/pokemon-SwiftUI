@@ -12,7 +12,16 @@ struct PokemonDetailView<ViewModel>: View where ViewModel: PokemonDetailViewMode
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            if viewModel.isLoading {
+                ProgressView()
+                    .background(Color.clear)
+            }
+        }
+        .onAppear(perform: { viewModel.onAppear() })
+        .navigationTitle(viewModel.pokemon.name)
+        .showErrorAlert($viewModel.error)
     }
 }
 

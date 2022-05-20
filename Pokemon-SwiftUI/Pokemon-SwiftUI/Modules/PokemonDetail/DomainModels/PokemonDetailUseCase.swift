@@ -10,7 +10,7 @@ import Combine
 protocol PokemonDetailUseCase {
     var repository: PokemonRepository { get }
     
-    func loadDetailPokemon(id: String) -> AnyPublisher<PokemonResponse, CommonUIError>
+    func getPokemonDetail(id: String) -> AnyPublisher<PokemonDetail, CommonUIError>
 }
 
 final class PokemonDetailUseCaseImpl: PokemonDetailUseCase {
@@ -20,9 +20,12 @@ final class PokemonDetailUseCaseImpl: PokemonDetailUseCase {
         self.repository = repository
     }
     
-    func loadDetailPokemon(id: String) -> AnyPublisher<PokemonResponse, CommonUIError> {
-        return repository.loadDetailPokemon(id: id)
+    func getPokemonDetail(id: String) -> AnyPublisher<PokemonDetail, CommonUIError> {
+        return repository.getPokemonDetail(id: id)
             .mapError({ $0.asCommonUIError() })
+            .map({ pokemonResponse in
+                return PokemonDetail(name: pokemonResponse.name)
+            })
             .eraseToAnyPublisher()
     }
     

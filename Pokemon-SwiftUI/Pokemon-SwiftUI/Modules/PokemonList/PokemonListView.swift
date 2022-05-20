@@ -12,7 +12,6 @@ struct PokemonListView<ViewModel>: View where ViewModel: PokemonListViewModel {
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        
         ZStack {
             List {
                 ForEach(viewModel.pokemons.indices, id: \.self) { index in
@@ -29,13 +28,13 @@ struct PokemonListView<ViewModel>: View where ViewModel: PokemonListViewModel {
                     }
                 }
             }
-            .navigationTitle("Pokémons")
-            .navigationBarTitleDisplayMode(.inline)
             if viewModel.isLoading {
                 ProgressView()
                     .background(Color.clear)
             }
         }
+        .navigationTitle("Pokémons")
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: { viewModel.onAppear() })
         .showErrorAlert($viewModel.error)
         
