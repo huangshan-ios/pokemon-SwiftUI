@@ -10,15 +10,18 @@ import SwiftUI
 struct PokemonDetailView<ViewModel>: View where ViewModel: PokemonDetailViewModel {
     
     @ObservedObject var viewModel: ViewModel
-    
+        
     var body: some View {
         ZStack {
             
             if let imageURL = viewModel.pokemon.imageURL {
                 AsyncImage(url: imageURL, placeholder: {
-                    Text("Loading")
+                    Image(systemName: "photo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
                 }, image: { image in
-                    image.resizable()
+                    image
+                        .resizable()
                         .aspectRatio(contentMode: .fit)
                 }).frame(width: 200, height: 200)
             }
