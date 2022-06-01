@@ -10,31 +10,33 @@ import SwiftUI
 struct PokemonDetailView<ViewModel>: View where ViewModel: PokemonDetailViewModel {
     
     @ObservedObject var viewModel: ViewModel
-        
+    
     var body: some View {
         ZStack {
             
             if let imageURL = viewModel.pokemon.imageURL {
-                AsyncImage(url: imageURL, placeholder: {
-                    Image(systemName: "photo")
-                        .resizable()
+                AsyncImage(url: imageURL,
+                           placeholder: { loadingView },
+                           image: { image in
+                    image.resizable()
                         .aspectRatio(contentMode: .fit)
-                }, image: { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                }).frame(width: 200, height: 200)
+                })
+                .frame(width: 200, height: 200)
             }
             
             if viewModel.isLoading {
-                ProgressView()
-                    .background(Color.clear)
+                loadingView
             }
             
         }
         .onAppear(perform: { viewModel.onAppear() })
         .navigationTitle(viewModel.pokemon.name)
         .showErrorAlert($viewModel.error)
+    }
+    
+    private var loadingView: some View {
+        return ProgressView()
+            .background(Color.clear)
     }
 }
 
