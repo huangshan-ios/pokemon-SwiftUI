@@ -28,6 +28,10 @@ struct PokemonResponse: Codable, Identifiable {
       return id
     }
     
+    var imageURL: String {
+        return sprites.other.artwork.front ?? ""
+    }
+    
     enum CodingKeys: String, CodingKey {
         case name = "name"
         case types = "types"

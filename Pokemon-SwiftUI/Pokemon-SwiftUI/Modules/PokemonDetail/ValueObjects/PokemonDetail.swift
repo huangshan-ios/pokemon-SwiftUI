@@ -9,8 +9,10 @@ import Foundation
 
 struct PokemonDetail {
     let name: String
+    let imageURL: URL?
     
-    init(name: String = "") {
+    init(name: String = "", imagePath: String = "") {
         self.name = name.capitalized
+        self.imageURL = URL(string: imagePath)
     }
 }

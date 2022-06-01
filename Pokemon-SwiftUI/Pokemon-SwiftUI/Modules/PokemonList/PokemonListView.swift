@@ -16,7 +16,7 @@ struct PokemonListView<ViewModel>: View where ViewModel: PokemonListViewModel {
             List {
                 ForEach(viewModel.pokemons.indices, id: \.self) { index in
                     if let pokemon = viewModel.getPokemon(from: index) {
-                        Text(pokemon.name.capitalized)
+                        Text(pokemon.capitalizedName)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .background(Color(.systemBackground))
                             .onTapGesture {

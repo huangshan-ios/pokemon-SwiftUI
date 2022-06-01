@@ -23,9 +23,7 @@ final class PokemonDetailUseCaseImpl: PokemonDetailUseCase {
     func getPokemonDetail(id: String) -> AnyPublisher<PokemonDetail, CommonUIError> {
         return repository.getPokemonDetail(id: id)
             .mapError({ $0.asCommonUIError() })
-            .map({ pokemonResponse in
-                return PokemonDetail(name: pokemonResponse.name)
-            })
+            .map({ PokemonDetail(name: $0.name, imagePath: $0.imageURL) })
             .eraseToAnyPublisher()
     }
     

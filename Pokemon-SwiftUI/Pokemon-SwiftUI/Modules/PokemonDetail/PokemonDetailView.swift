@@ -13,11 +13,21 @@ struct PokemonDetailView<ViewModel>: View where ViewModel: PokemonDetailViewMode
     
     var body: some View {
         ZStack {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            
+            if let imageURL = viewModel.pokemon.imageURL {
+                AsyncImage(url: imageURL, placeholder: {
+                    Text("Loading")
+                }, image: { image in
+                    image.resizable()
+                        .aspectRatio(contentMode: .fit)
+                }).frame(width: 200, height: 200)
+            }
+            
             if viewModel.isLoading {
                 ProgressView()
                     .background(Color.clear)
             }
+            
         }
         .onAppear(perform: { viewModel.onAppear() })
         .navigationTitle(viewModel.pokemon.name)

@@ -52,6 +52,7 @@
 		F7D5D4BF282EE08000EAB9D6 /* Error+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D4BE282EE08000EAB9D6 /* Error+Extensions.swift */; };
 		F7D5D4C3282F9A7F00EAB9D6 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5D4C2282F9A7F00EAB9D6 /* Array+Extensions.swift */; };
 		F7EC749E283119AC00DC410A /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7EC749D283119AC00DC410A /* View+Extensions.swift */; };
+		F7F45F482847B13C004099C0 /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F45F472847B13C004099C0 /* AsyncImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		F7D5D4BE282EE08000EAB9D6 /* Error+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extensions.swift"; sourceTree = "<group>"; };
 		F7D5D4C2282F9A7F00EAB9D6 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		F7EC749D283119AC00DC410A /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		F7F45F472847B13C004099C0 /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,6 +286,7 @@
 		F7901927282438AA00E7969B /* CommonShared */ = {
 			isa = PBXGroup;
 			children = (
+				F7F45F462847B126004099C0 /* CustomView */,
 				F7D5D4BB282EDD0D00EAB9D6 /* Helper */,
 				F793AC29282ABC6600938329 /* CustomClass */,
 				F793AC202829567400938329 /* Extensions */,
@@ -401,6 +404,14 @@
 				F7D5D4BC282EDD3300EAB9D6 /* Constants.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		F7F45F462847B126004099C0 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				F7F45F472847B13C004099C0 /* AsyncImage.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -561,6 +572,7 @@
 				F793AC222829567C00938329 /* CancellableBag.swift in Sources */,
 				F72D61DB28354951003858C1 /* PokemonRequest.swift in Sources */,
 				F79019332824428800E7969B /* NetworkRequest.swift in Sources */,
+				F7F45F482847B13C004099C0 /* AsyncImage.swift in Sources */,
 				F72D61B628353B4C003858C1 /* PokemonDetailView.swift in Sources */,
 				F72D61C9283540D3003858C1 /* AbilitiesResult.swift in Sources */,
 				F7D5D4BD282EDD3300EAB9D6 /* Constants.swift in Sources */,

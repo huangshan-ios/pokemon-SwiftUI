@@ -10,4 +10,8 @@ import Foundation
 struct PokemonInfo {
     let name: String
     let url: String
+    
+    var capitalizedName: String {
+        return name.capitalized
+    }
 }

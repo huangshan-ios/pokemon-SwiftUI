@@ -6,12 +6,14 @@
 //
 
 import Combine
+import UIKit
 
 protocol PokemonDetailViewModel: ObservableObject {
     var pokemonId: String { get }
     var useCase: PokemonDetailUseCase { get }
     
     var pokemon: PokemonDetail { get }
+    var image: UIImage { get }
     var isLoading: Bool { get }
     var error: CommonUIError? { get set }
     
@@ -24,6 +26,7 @@ final class PokemonDetailViewModelPreview: PokemonDetailViewModel {
     let useCase: PokemonDetailUseCase = PokemonDetailUseCaseImpl(repository: PokemonRepositoryImpl(networkService: NetworkService()))
     
     var pokemon: PokemonDetail = PokemonDetail()
+    var image: UIImage = UIImage()
     
     @Published var error: CommonUIError? = nil
     @Published private(set) var isLoading: Bool = false
@@ -34,6 +37,7 @@ final class PokemonDetailViewModelPreview: PokemonDetailViewModel {
 
 final class PokemonDetailViewModelImpl: PokemonDetailViewModel {
     
+    @Published private(set) var image: UIImage = UIImage()
     @Published private(set) var pokemon: PokemonDetail = PokemonDetail()
     @Published var error: CommonUIError? = nil
     @Published private(set) var isLoading: Bool = false
